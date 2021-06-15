@@ -1,5 +1,20 @@
 # Reactive Relational Database Connectivity PostgreSQL Implementation [![Java CI with Maven](https://github.com/pgjdbc/r2dbc-postgresql/workflows/Java%20CI%20with%20Maven/badge.svg?branch=0.8.x)](https://github.com/pgjdbc/r2dbc-postgresql/actions?query=workflow%3A%22Java+CI+with+Maven%22+branch%3A0.8.x) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.r2dbc/r2dbc-postgresql/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.r2dbc/r2dbc-postgresql)
 
+---
+## Hot Fix: From [r2dbc-postgresql PR-410](https://github.com/pgjdbc/r2dbc-postgresql/pull/410)
+Add codec cache for improving performance on encode/decode codec.
+
+### How to Build
+You should use JDK 8. If not, it causes error on unit tests.
+```bash
+./mvnw clean install
+./mvnw -B verify -D skipITs # run unit tests
+./mvnw package # build library jar
+```
+This version is based on 0.8.x, you can use like latest `io.r2dbc:r2dbc-postgresql:0.8.8.RELEASE`.
+
+---
+
 This project contains the [PostgreSQL][p] implementation of the [R2DBC SPI][r].  This implementation is not intended to be used directly, but rather to be used as the backing implementation for a humane client library to delegate to.
 
 This driver provides the following features:
